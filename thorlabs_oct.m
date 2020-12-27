@@ -1,4 +1,5 @@
 function [inf,raw] = thorlabs_oct(inf)
+%% input: string with file path
 clc; clearvars -except inf
 if strcmp(inf.disp,'special')
     [inf,~] = thorlabs_oct_special(inf);
