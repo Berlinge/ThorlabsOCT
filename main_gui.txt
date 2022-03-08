@@ -1,0 +1,11 @@
+version = "1";
+
+rec_path = ".\functions_processing\";
+server_path = ".\functions_use_server\";
+local_path = ".\functions_use_local\";
+
+%rec_path = "C:\Users\Michael\OneDrive\Arbeit\OCT\functions_processing\";
+%server_path = "C:\Users\Michael\OneDrive\Arbeit\OCT\functions_use_server\";
+%local_path = "C:\Users\Michael\OneDrive\Arbeit\OCT"\functions_use_local;
+
+[-455.434,107.1411,0]
