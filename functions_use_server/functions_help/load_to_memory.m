@@ -29,7 +29,11 @@ try
     catch
     end
     %SizeZ(2) = 1024;
-    mem = memory;
+    if ismac
+        mem.MaxPossibleArrayBytes = 1000000000;
+    else
+        mem = memory;
+    end
     if ((SizeZ(2)-SizeZ(1)+1)*inf.SizeX*inf.SizeY*inf.SaSA*64)/8 >= mem.MaxPossibleArrayBytes % check available memory
         disp('houston we have a problem');
         dbstop at 31 in load_to_memory

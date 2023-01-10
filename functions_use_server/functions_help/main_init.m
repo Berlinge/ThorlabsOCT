@@ -41,20 +41,20 @@ else
 %     end
 end
 
-if sum(any(strcmp(v,'Optimization Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
-    inf.disp_corr_image = 'off';
-    disp('Optimization Toolbox is not installed');
-end
-
-if sum(any(strcmp(v,'DSP System Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
-    inf.disp_corr_image = 'off';
-    disp('Optimization Toolbox is not installed');
-end
-
-if sum(any(strcmp(v,'Signal Processing Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
-    inf.disp_corr_image = 'off';
-    disp('Optimization Toolbox is not installed');
-end
+% if sum(any(strcmp(v,'Optimization Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
+%     inf.disp_corr_image = 'off';
+%     disp('Optimization Toolbox is not installed');
+% end
+% 
+% if sum(any(strcmp(v,'DSP System Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
+%     inf.disp_corr_image = 'off';
+%     disp('DSP System Toolbox is not installed');
+% end
+% 
+% if sum(any(strcmp(v,'Signal Processing Toolbox')))==0 && sum(any(strcmp(v,'Global Optimization Toolbox')))==0
+%     inf.disp_corr_image = 'off';
+%     disp('Signal Processing Toolbox is not installed');
+% end
 
 %%% Additional disperions
 % if strcmp(inf.disp_corr_image,'on_extended')
