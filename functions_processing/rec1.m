@@ -1,17 +1,18 @@
 function [b_scan] = rec1(i,b_scan,Offset,Chirp,ChirpN,Dispersion,SE,infa,infb,interp_par,BtECS,FileName,File,Path,Apo,complex,spectrometer,half)
 % by Hinnerk Schulz-Hildebrandt
 % - added parallel computing support by Michael Münter
+
 b_scan = single(reshape(b_scan,[2048 length(b_scan)/2048]))*(BtECS) - Offset;
 apo = mean(b_scan(:,Apo(1):Apo(2)-1),2);
 if strcmp(spectrometer,'Thorlabs')
     b_scan = b_scan(:,Apo(2):end)-apo;
-    b_scan = b_scan.*ApoVector(apo,single(BtECS)); % Apodisierung
-    
-%     h = hann(2000);
-%     hh = 0*linspace(1,2048,2048);
-%     hh(1024) = 1;
-%     hh = conv(hh,h,'same');
-%     b_scan = b_scan.*hh';
+%     b_scan = b_scan.*ApoVector(apo,single(BtECS)); % Apodisierung
+    %b_scan = b_scan./apo;
+    h = hann(2000);
+    hh = 0*linspace(1,2048,2048);
+    hh(1024) = 1;
+    hh = conv(hh,h,'same');
+    b_scan = b_scan.*hh';
     
 elseif strcmp(spectrometer,'xposure')
     b_scan = b_scan(:,Apo(2):end);

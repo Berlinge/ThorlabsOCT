@@ -23,9 +23,16 @@ try
     end
     
     % write into directory
-    imwrite(c,fullfile(path,['\Auswertung_',function_name],strcat(convertStringsToChars(inf.Comment),'_',convertStringsToChars(inf.file{1,inf.i}),'_rgb.png')));
+    %imwrite(c,fullfile(path,['\Auswertung_',function_name],strcat(convertStringsToChars(inf.Comment),'_',convertStringsToChars(inf.file{1,inf.i}),'_rgb.png')));
     % write to desktop
     %imwrite(c,fullfile(userdir,'Desktop\Auswertung\',strcat(convertStringsToChars(inf.Comment),'_',convertStringsToChars(inf.file{1,inf.i}),'_rgb.png')));
+    
+    %just for dissertation
+    prompt = 'Size of window';
+    x = input(prompt)
+    imwrite(c,fullfile(path,['\Auswertung_',function_name],[num2str(x),'_rgb.png']));
+    imwrite(uint8(20.*log10(squeeze(mean(Raw,3)))),fullfile(path,['\Auswertung_',function_name],[num2str(x),'_mean.png']));
+
 catch
 end
 %% Extend

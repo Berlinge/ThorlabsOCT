@@ -17,7 +17,7 @@ version = str2double(extractBefore(extractAfter(init,'version="'),'"'));
 rec_path = string(extractBefore(extractAfter(init,'rec_path="'),'"'));
 server_path = string(extractBefore(extractAfter(init,'server_path="'),'"'));
 c = cd;
-c = c(1:end-3);
+c = c(1:end-3); 
 local_path = string(extractBefore(extractAfter(init,'local_path="'),'"'));
 local_path = fullfile(c,local_path);
 disp(version)
