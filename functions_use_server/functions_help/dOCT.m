@@ -17,23 +17,11 @@ try
         b = testb;
         g = testg-testb;
         r = testr-testg;
-        
-        r = r-min(r(:));
-        g = g-min(g(:));
-        b = b-min(b(:));
-        
-        r = r./max(r(:));
-        g = g./max(g(:));
-        b = b./max(b(:));
-        
-        r = log(r./max(r(:))+1);
-        g = log(g./max(g(:))+1);
-        b = log(b./max(b(:))+1);
-        
-        r = medfilt2(r);
-        g = medfilt2(g);
-        b = medfilt2(b);
-        
+                
+        r = log(r);
+        g = log(g);
+        b = log(b);
+              
         r = r-min(r(:));
         g = g-min(g(:));
         b = b-min(b(:));
